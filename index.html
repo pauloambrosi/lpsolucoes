@@ -42,8 +42,8 @@
         </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-2" data-aos="fade-up"> Loraíne Vivas & Paulo Ambrosi</h1>
         <p class="text-lg md:text-xl mb-6" data-aos="fade-up" data-aos-delay="200">Gestão Educacional | Design
-            Instrucional | Produtos Digitais<br> Administração Moodle| Desenvolvimento WEB | Análise de Sistemas |
-            Gestão de projetos</p>
+            Instrucional | Produtos Digitais<br> Administração Moodle | Desenvolvimento WEB | Análise de Sistemas |
+            Gestão de Projetos</p>
         <a href="#sobre"
             class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
             data-aos="fade-up" data-aos-delay="400">Ver mais</a>
@@ -249,6 +249,7 @@
             </div>
         </div>
         <br><br>
+
         <h1 class="text-2xl font-bold text-center mb-12" data-aos="fade-up">
             Moodle SENAI Bahia
         </h1>
@@ -291,6 +292,90 @@
             <!-- Indicadores -->
             <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 <template x-for="i in 3">
+                    <div @click="slide = i" class="w-3 h-3 rounded-full cursor-pointer"
+                        :class="slide === i ? 'bg-white' : 'bg-gray-400'"></div>
+                </template>
+            </div>
+        </div>
+
+
+        <br><br>
+
+        <style>
+
+    h1 {
+      color: #005c99;
+      text-align: center;
+    }
+    h2 {
+      color: #0088cc;
+      margin-top: 30px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+  </style>
+
+        <h1 class="text-2xl font-bold text-center mb-12" data-aos="fade-up">
+            Flow – Sistema de Autoria e Gestão de Conteúdo
+        </h1>
+
+        <div class=" max-w-5xl mx-auto m-6">
+
+            <p>
+                O <strong>Flow</strong> é um sistema em nuvem de autoria e gestão de conteúdo desenvolvido para atender
+                às necessidades dos cursos EAD do SENAI.
+                Ele permite criar aulas de forma intuitiva, personalizar estruturas e páginas, acompanhar o fluxo de
+                produção com rastreabilidade e relatórios,
+                além de centralizar conteúdos em um repositório que facilita o reaproveitamento de materiais.
+            </p>
+
+            <b>Autoria de Conteúdo</b>
+            <p>
+                Permite criar e personalizar aulas de forma intuitiva, com estruturas flexíveis, seções interativas,
+                histórico de versões e exportação em diferentes formatos.
+            </p>
+
+            <b>Gestão do Conteúdo</b>
+            <p>
+                Oferece rastreabilidade completa do fluxo de produção, relatórios e indicadores em Kanban, além de um
+                repositório central que facilita a localização e o reaproveitamento de materiais.
+            </p>
+
+            <b>Diferenciais</b>
+            <p>
+                Disponível em nuvem, autossuficiente e integrado a inteligência artificial, o Flow otimiza a produção e
+                garante maior eficiência e qualidade nos cursos EAD do SENAI.
+            </p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+        <div x-data="{ slide: 1 }" class="relative w-full max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+
+            <!-- Slides -->
+            <div class="flex transition-transform duration-700"
+                :style="'transform: translateX(-' + (slide - 1) * 100 + '%)'">
+
+                <img src="img/portfolio/flow1.png" class="w-full object-cover" />
+                <img src="img/portfolio/flow2.png" class="w-full object-cover" />
+                <img src="img/portfolio/flow3.png" class="w-full object-cover" />
+                <img src="img/portfolio/flow4.png" class="w-full object-cover" />
+                <img src="img/portfolio/flow5.png" class="w-full object-cover" />
+            </div>
+
+            <!-- Botões anterior/próximo -->
+            <button @click="slide = slide > 1 ? slide - 1 : 5"
+                class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">
+                <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button @click="slide = slide < 5 ? slide + 1 : 1"
+                class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <template x-for="i in 5">
                     <div @click="slide = i" class="w-3 h-3 rounded-full cursor-pointer"
                         :class="slide === i ? 'bg-white' : 'bg-gray-400'"></div>
                 </template>
