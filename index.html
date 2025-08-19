@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- Hero Section -->
     <section
-        class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-400 to-orange-400 text-white p-6">
+        class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-500 to-orange-400 text-white p-6">
 
         <!-- Adicione no <head> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -97,99 +97,238 @@
 
     <!-- Experiência -->
     <section class="bg-white py-16 px-6">
-        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Experiência</h2>
-
-        <div class="max-w-5xl mx-auto flex gap-8" style="    flex-wrap: wrap;">
-            <!-- Coluna da Pessoa 1 -->
-            <div class="flex-1 min-w-[300px]">
-                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up"> Loraíne</h3>
-
-                <div class="flex-1 flex flex-col gap-6">
-                    <div class="p-6 bg-purple-300 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-                        <h3 class="text-xl font-semibold mb-2">Diretora Acadêmica - Instituto de Ensino Superior da APM
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-2">2025 - Atual</p>
-                        <p>Liderança executiva com foco em gestão estratégica, acadêmica e financeira, desenvolvimento
-                            de cursos e programas, otimização de processos institucionais e condução de equipes
-                            multidisciplinares para excelência e inovação educacional.</p>
-                    </div>
-
-                    <div class="p-6 bg-purple-200 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-                        <h3 class="text-xl font-semibold mb-2">Grupo Educacional Primum - Coordenadora de Produtos</h3>
-                        <p class="text-sm text-gray-600 mb-2">2025 - 2025</p>
-                        <p>Coordenação de portfólio de produtos educacionais, conduzindo UX Research, análise de mercado
-                            e desenvolvimento de estratégias digitais para otimizar experiência de aprendizagem,
-                            engajamento de usuários e decisões baseadas em dados.</p>
-                    </div>
-
-                    <div class="p-6 bg-purple-100 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-                        <h3 class="text-xl font-semibold mb-2">Território Saber - Product Manager</h3>
-                        <p class="text-sm text-gray-600 mb-2">2024 - 2025</p>
-                        <p>Product Manager focado em pesquisa de mercado, UX Discovery e análise de dados para criação
-                            de infoprodutos, incluindo personas, jornadas do usuário e estratégias de inovação em
-                            produtos digitais.</p>
-                    </div>
 
 
-                    <div class="p-6 bg-purple-50 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-                        <h3 class="text-xl font-semibold mb-2">UniFECAF - Head EaD / Gerente Executiva</h3>
-                        <p class="text-sm text-gray-600 mb-2">2023 - 2024</p>
-                        <p>Gestão estratégica do NEAD, coordenando conteúdos, operações, tutoria, integrações de
-                            sistemas e experiência do usuário em cursos EaD.</p>
-                    </div>
+        <div x-data="{ tab: 'tab1' }"
+            class="w-full min-h-screen bg-white-100 flex flex-col items-center justify-start py-10">
 
-                    <div class="p-6 bg-purple-100 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-                        <h3 class="text-xl font-semibold mb-2">UniFECAF - Designer Instrucional Sênior</h3>
-                        <p class="text-sm text-gray-600 mb-2">2021 - 2023</p>
-                        <p>Assessoramento de professores, design instrucional e gestão do fluxo de produção de conteúdos
-                            EaD.</p>
-                    </div>
-
-                    <div class="p-6 bg-purple-200 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-                        <h3 class="text-xl font-semibold mb-2">
-                            Designer Educacional e Roteirista - Senai BAHIA</h3>
-                        <p class="text-sm text-gray-600 mb-2">2012 - 2021</p>
-                        <p>Design instrucional e desenvolvimento de materiais educacionais digitais (livros, apps,
-                            videoaulas, games e simuladores), criação de roteiros e storytelling, capacitação de
-                            docentes e produção de conteúdos multimídia.</p>
-                    </div>
-                </div>
-
+            <!-- Menu de Abas -->
+            <div class="w-full max-w-4xl flex">
+                <button @click="tab = 'tab1'"
+                    :class="tab === 'tab1' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 hover:bg-gray-200'"
+                    class="flex-1 py-6 text-lg font-semibold rounded-l-2xl shadow-md transition">
+                    Formação </button>
+                <button @click="tab = 'tab2'"
+                    :class="tab === 'tab2' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 hover:bg-gray-200'"
+                    class="flex-1 py-6 text-lg font-semibold rounded-r-2xl shadow-md transition">
+                    Experiência
+                </button>
             </div>
 
-            <!-- Coluna da Pessoa 2 -->
-            <div class="flex-1 min-w-[300px]">
-                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up"> Paulo</h3>
+            <!-- Conteúdo das Abas -->
+            <div class="w-full max-w-4xl mt-6 bg-white p-8 rounded-2xl shadow-md overflow-hidden">
+                <div x-show="tab === 'tab1'" x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 -translate-x-full"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:leave="transition ease-in duration-500"
+                    x-transition:leave-start="opacity-100 translate-x-0"
+                    x-transition:leave-end="opacity-0 translate-x-full" x-cloak class="space-y-4">
+                    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Formação</h2>
 
-                <div class="flex-1 flex flex-col gap-6">
 
-                    <div class="p-6 bg-orange-200 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-left">
-                        <h3 class="text-xl font-semibold mb-2">Analista de Sistemas - Senai BAHIA</h3>
-                        <p class="text-sm text-gray-600 mb-2">2022 - Atual</p>
-                        <p>Desenvolvimento web e sistemas (PHP, JavaScript, JQuery, HTML/CSS, Bootstrap), back-end e
-                            bancos de dados (SQL, MySQL), Moodle e aplicativos web. Forte capacidade analítica,
-                            resolução de problemas e análise de dados.</p>
+                    <div class="max-w-5xl mx-auto flex gap-8" style="flex-wrap: wrap;">
+                        <!-- Coluna da Pessoa 1 -->
+                        <div class="flex-1 min-w-[300px]">
+                            <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Loraíne</h3>
+
+                            <div class="flex-1 flex flex-col gap-6">
+                                <div class="p-6 bg-purple-300 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">FIAP</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2024 - 2025</p>
+                                    <p class="text-sm text-gray-800 italic">Pós-graduação Stricto Sensu em Digital
+                                        Product Management</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-200 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">Centro Universitário Senac</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2015 - 2016</p>
+                                    <p class="text-sm text-gray-800 italic">Pós-graduação em Design Instrucional</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-100 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">UFBA - Universidade Federal da Bahia</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2014 - 2015</p>
+                                    <p class="text-sm text-gray-800 italic">Aluna especial – Linha de pesquisa em
+                                        Cibercultura</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-50 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">Unijorge</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2012 - 2014</p>
+                                    <p class="text-sm text-gray-800 italic">Pós-graduação em Linguagens e Mídias
+                                        Audiovisuais</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-100 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">Unijorge</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2007 - 2011</p>
+                                    <p class="text-sm text-gray-800 italic">Bacharel em Jornalismo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coluna da Pessoa 2 -->
+                        <div class="flex-1 min-w-[300px]">
+                            <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Paulo</h3>
+
+                            <div class="flex-1 flex flex-col gap-6">
+                                <div class="p-6 bg-orange-200 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-left">
+                                    <h3 class="text-xl font-semibold mb-2">Universidade Salvador</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2013 - 2017</p>
+                                    <p class="text-sm text-gray-800 italic">Bacharelado em Sistemas de Informação</p>
+                                </div>
+
+                                <div class="p-6 bg-orange-100 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-left">
+                                    <h3 class="text-xl font-semibold mb-2">Senai Bahia</h3>
+                                    <p class="text-sm text-gray-600 mb-1">2012 - 2013</p>
+                                    <p class="text-sm text-gray-800 italic">Curso de Aprendizagem Básica em
+                                        Desenvolvimento Web</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
-                    <div class="p-6 bg-orange-100 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-left">
-                        <h3 class="text-xl font-semibold mb-2">Programador - Senai BAHIA</h3>
-                        <p class="text-sm text-gray-600 mb-2">2015 - 2022</p>
-                        <p>Desenvolvimento web e sistemas (PHP, JavaScript, JQuery, HTML/CSS, Bootstrap), back-end e
-                            bancos de dados (SQL, MySQL), Moodle, Adobe Animate e CreateJS. Forte capacidade analítica e
-                            programação orientada a soluções.</p>
-                    </div>
+                </div>
+                <div x-show="tab === 'tab2'" x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 translate-x-full"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:leave="transition ease-in duration-500"
+                    x-transition:leave-start="opacity-100 translate-x-0"
+                    x-transition:leave-end="opacity-0 -translate-x-full" x-cloak class="space-y-4">
 
-                    <div class="p-6 bg-orange-50 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-left">
-                        <h3 class="text-xl font-semibold mb-2">Estagiário - Senai BAHIA</h3>
-                        <p class="text-sm text-gray-600 mb-2">2013 - 2015</p>
-                        <p>Desenvolvimento web e sistemas (PHP, JS, JQuery, CSS, Bootstrap), Moodle, Adobe Animate,
-                            CreateJS e design digital. Forte raciocínio analítico e programação criativa.
-                        </p>
+                    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Experiência</h2>
+
+
+                    <div class="max-w-5xl mx-auto flex gap-8" style="    flex-wrap: wrap;">
+                        <!-- Coluna da Pessoa 1 -->
+                        <div class="flex-1 min-w-[300px]">
+                            <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up"> Loraíne</h3>
+
+                            <div class="flex-1 flex flex-col gap-6">
+                                <div class="p-6 bg-purple-300 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">Diretora Acadêmica - Instituto de Ensino
+                                        Superior da APM
+                                    </h3>
+                                    <p class="text-sm text-gray-600 mb-2">2025 - Atual</p>
+                                    <p>Liderança executiva com foco em gestão estratégica, acadêmica e financeira,
+                                        desenvolvimento
+                                        de cursos e programas, otimização de processos institucionais e condução de
+                                        equipes
+                                        multidisciplinares para excelência e inovação educacional.</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-200 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">Grupo Educacional Primum - Coordenadora de
+                                        Produtos</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2025 - 2025</p>
+                                    <p>Coordenação de portfólio de produtos educacionais, conduzindo UX Research,
+                                        análise de mercado
+                                        e desenvolvimento de estratégias digitais para otimizar experiência de
+                                        aprendizagem,
+                                        engajamento de usuários e decisões baseadas em dados.</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-100 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">Território Saber - Product Manager</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2024 - 2025</p>
+                                    <p>Product Manager focado em pesquisa de mercado, UX Discovery e análise de dados
+                                        para criação
+                                        de infoprodutos, incluindo personas, jornadas do usuário e estratégias de
+                                        inovação em
+                                        produtos digitais.</p>
+                                </div>
+
+
+                                <div class="p-6 bg-purple-50 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">UniFECAF - Head EaD / Gerente Executiva</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2023 - 2024</p>
+                                    <p>Gestão estratégica do NEAD, coordenando conteúdos, operações, tutoria,
+                                        integrações de
+                                        sistemas e experiência do usuário em cursos EaD.</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-100 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">UniFECAF - Designer Instrucional Sênior</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2021 - 2023</p>
+                                    <p>Assessoramento de professores, design instrucional e gestão do fluxo de produção
+                                        de conteúdos
+                                        EaD.</p>
+                                </div>
+
+                                <div class="p-6 bg-purple-200 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-right">
+                                    <h3 class="text-xl font-semibold mb-2">
+                                        Designer Educacional e Roteirista - Senai BAHIA</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2012 - 2021</p>
+                                    <p>Design instrucional e desenvolvimento de materiais educacionais digitais (livros,
+                                        apps,
+                                        videoaulas, games e simuladores), criação de roteiros e storytelling,
+                                        capacitação de
+                                        docentes e produção de conteúdos multimídia.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Coluna da Pessoa 2 -->
+                        <div class="flex-1 min-w-[300px]">
+                            <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up"> Paulo</h3>
+
+                            <div class="flex-1 flex flex-col gap-6">
+
+                                <div class="p-6 bg-orange-200 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-left">
+                                    <h3 class="text-xl font-semibold mb-2">Analista de Sistemas - Senai BAHIA</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2022 - Atual</p>
+                                    <p>Desenvolvimento web e sistemas (PHP, JavaScript, JQuery, HTML/CSS, Bootstrap),
+                                        back-end e
+                                        bancos de dados (SQL, MySQL), Moodle e aplicativos web. Forte capacidade
+                                        analítica,
+                                        resolução de problemas e análise de dados.</p>
+                                </div>
+
+
+                                <div class="p-6 bg-orange-100 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-left">
+                                    <h3 class="text-xl font-semibold mb-2">Programador - Senai BAHIA</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2015 - 2022</p>
+                                    <p>Desenvolvimento web e sistemas (PHP, JavaScript, JQuery, HTML/CSS, Bootstrap),
+                                        back-end e
+                                        bancos de dados (SQL, MySQL), Moodle, Adobe Animate e CreateJS. Forte capacidade
+                                        analítica e
+                                        programação orientada a soluções.</p>
+                                </div>
+
+                                <div class="p-6 bg-orange-50 rounded-xl shadow hover:shadow-lg transition"
+                                    data-aos="fade-left">
+                                    <h3 class="text-xl font-semibold mb-2">Estagiário - Senai BAHIA</h3>
+                                    <p class="text-sm text-gray-600 mb-2">2013 - 2015</p>
+                                    <p>Desenvolvimento web e sistemas (PHP, JS, JQuery, CSS, Bootstrap), Moodle, Adobe
+                                        Animate,
+                                        CreateJS e design digital. Forte raciocínio analítico e programação criativa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </section>
     <section id="portfolio" class="bg-gray py-16 px-6">
         <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Portfólio</h2>
@@ -198,7 +337,7 @@
             Moodle Observatório PLE-PL2
         </h1>
 
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+        <script src="js/alpinejs.min.js" defer></script>
 
         <div class=" max-w-5xl mx-auto m-6">
 
@@ -266,7 +405,6 @@
                 em múltiplas áreas do conhecimento.
             </p>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
         <div x-data="{ slide: 1 }" class="relative w-full max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
 
@@ -301,20 +439,7 @@
 
         <br><br>
 
-        <style>
 
-    h1 {
-      color: #005c99;
-      text-align: center;
-    }
-    h2 {
-      color: #0088cc;
-      margin-top: 30px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-  </style>
 
         <h1 class="text-2xl font-bold text-center mb-12" data-aos="fade-up">
             Flow – Sistema de Autoria e Gestão de Conteúdo
